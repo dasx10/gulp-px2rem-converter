@@ -3,13 +3,13 @@ Convert all px to rem
 ## install 
 
 ```
-npm i -D gulp-px-to-rem
+npm i -D gulp-px2rem-converter
 ```
 
 ## use
 ```
 const gulp = require('gulp');
-const pxToRem = require('gulp-px-to-rem')
+const pxToRem = require('gulp-px2rem-converter')
 
 function css(){
     return gulp.src('./*.css')
