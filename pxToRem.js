@@ -26,7 +26,7 @@ const pxToRem = (file) => {
         break;
     }
 
-    file = file.replace(/rem+[ \)|\)|\)\n]+{/g,'em){')
+    file = file.replace(/rem+[ \)|\)|\)\n]+{/ig,'em){')
 
     return file;
 }
