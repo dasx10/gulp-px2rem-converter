@@ -18,7 +18,7 @@ return through.obj(function(blobFile, enc, cb) {
     }
     // Код плагина
     let file = blobFile.contents.toString();
-    file = pxToRem(file);
+    file = pxToRem(file,options);
     blobFile.contents = new Buffer(file);
     // Возвращаем обработанный файл для следующего плагина
         this.push(blobFile);

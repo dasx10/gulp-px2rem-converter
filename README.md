@@ -19,6 +19,20 @@ function css(){
 
 module.exports.css = css;
 ```
+
+or
+```
+const gulp = require('gulp');
+const pxToRem = require('gulp-px2rem-converter')
+
+function css(){
+    return gulp.src('./*.css')
+    .pipe(pxToRem(16))
+    .pipe(gulp.dest('./dist'))
+}
+
+module.exports.css = css;
+```
 ## run
 ```
 gulp css
