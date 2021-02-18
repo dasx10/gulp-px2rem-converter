@@ -14,7 +14,7 @@ const getType = (arg) => {
             type = result[0];
         }
     }
-    return type;
+    return type.toLocaleLowerCase();
 }
 
 module.exports = getType;
