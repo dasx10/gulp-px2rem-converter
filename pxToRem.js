@@ -5,7 +5,7 @@ let type;
 
 const pxToRem = (file, rootSize) => {
     if(rootSize){
-        type = getType(rootSize).toLocaleLowerCase();
+        type = getType(rootSize).toLocaleLowerCase() || 'px';
         param = rootSize.replace(type,'').trim();
     } else {
         let arg = getParams(file);
