@@ -2,7 +2,7 @@ let px = /px/i;
 let p = /%/;
 
 let result = null;
-let type = '';
+let type = 'px';
 
 const getType = (arg) => {
     result = px.exec(arg);
