@@ -1,4 +1,4 @@
-# gulp hex color min
+# gulp converter pixel to rem
 Convert all px to rem
 ## install 
 
