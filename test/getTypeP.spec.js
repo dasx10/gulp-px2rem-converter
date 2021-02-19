@@ -1,4 +1,4 @@
-const getType = require('../getType');
+const getType = require('../dist/getType');
 
 test('return %', () => {
     expect(getType('0%')).toBe("%");
