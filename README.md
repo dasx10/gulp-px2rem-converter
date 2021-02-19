@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# gulp px to rem
-=======
 # gulp converter pixel to rem
->>>>>>> 54b3018dc1c459abf4e44210afaa1495cc9e996a
 Convert all `px` to `rem`
 ## install 
 
@@ -24,11 +20,7 @@ function css(){
 module.exports.css = css;
 ```
 
-<<<<<<< HEAD
-If you are not using `:root` or `html` or they do not have a font-size then you can ignore it. The default value `16px` will be taken or you can specify this value manually
-=======
 If you are not using `:root` or `html` or they do not have a `font-size` then you can ignore it. The default value `16px` will be taken or you can specify this value manually
->>>>>>> 54b3018dc1c459abf4e44210afaa1495cc9e996a
 ```
 pxToRem(16) 
 ```
