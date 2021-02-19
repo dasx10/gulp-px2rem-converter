@@ -1,7 +1,7 @@
 'use strict';
 const gutil = require('gulp-util');
 const through = require('through2');
-const pxToRem = require('./src/pxToRem');
+const pxToRem = require('./dist/pxToRem');
 module.exports = (options) => {
   // Какие-то действия с опциями. Например, проверка их существования,
   // задание значения по умолчанию и т.д.
