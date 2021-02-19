@@ -1,4 +1,4 @@
-const {getParams} = require('../findRoot');
+const {getParams} = require('../dist/findRoot');
 
 test('return %', () => {
     expect(getParams(':root{font-size:16px;}')).toBe("16px");
