@@ -1,5 +1,5 @@
 # gulp converter pixel to rem
-Convert all px to rem
+Convert all `px` to `rem`
 ## install 
 
 ```
@@ -20,7 +20,7 @@ function css(){
 module.exports.css = css;
 ```
 
-If you are not using :root or html or they do not have a font-size then you can ignore it. The default value 16px will be taken or you can specify this value manually
+If you are not using `:root` or `html` or they do not have a `font-size` then you can ignore it. The default value `16px` will be taken or you can specify this value manually
 ```
 pxToRem(16) 
 ```
@@ -108,12 +108,12 @@ div{
 ----
 ## info
 
-The plugin works with units such as % or px. If you are using other devices, do not use this plugin. Unable to compute units that are dynamic by the browser.
+The plugin works with units such as `%` or `px`. If you are using other devices, do not use this plugin. Unable to compute units that are dynamic by the browser.
 
-Also converts all @media to em where px was used. Using em will resize all dimensions to those specified by the user. rem is not used due to bugs in Safari browsers
+Also converts all `@media` to `em` where `px` was used. Using `em` will resize all dimensions to those specified by the user. `rem` is not used due to bugs in Safari browsers
 
 The plugin is not case sensitive.
-You can enter both px and PX or Px
+You can enter both `px` and `PX` or `Px`
 
-Doesn't work if you are using :root or html
-in @media
+Doesn't work if you are using `:root` or `html`
+in `@media`
