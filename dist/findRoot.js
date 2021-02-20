@@ -14,6 +14,7 @@ const getParams = (file, skipeRoot = false) => {
                 return params = fzResult[0].replace(';', '').split(':')[1];
             }
             else {
+                resultRoot = [];
                 return getParams(file, true);
             }
         }
