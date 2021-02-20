@@ -117,10 +117,10 @@ Also converts all `@media` to `em` where `px` was used. Using `em` will resize a
 The plugin is not case sensitive.
 You can enter both `px` and `PX` or `Px`
 
-Doesn't work if you are using `:root` or `html`
-in `@media`
-
+Doesn't work if you use `font-size` in `:root` or `html`
+in `@ media`.
+By default will take only the first `font-size` in `:root` or `html` if there is no` font-size` value in `:root`
 
 ## compatibility
 
-css less scss
+css less(http://lesscss.org/) scss

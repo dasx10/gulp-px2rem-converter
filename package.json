@@ -1,7 +1,7 @@
 {
   "name": "gulp-px2rem-converter",
   "version": "1.5.6",
-  "description": "Convert all px to rem",
+  "description": "Gulp plugin. Converts all properties in pixels to rem, also converts all media in pixels in em",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -13,15 +13,20 @@
     "url": "git+https://github.com/dasx10/gulp-px-to-rem.git"
   },
   "keywords": [
-    "gulpplugin",
+		"gulpplugin",
+		"gulp",
 		"css",
 		"less",
 		"scss",
     "converter",
     "pixel",
-    "rem",
 		"px",
-		"rem2px"
+		"to",
+    "rem",
+		"em",
+		"rem2px",
+		"media2em",
+		"media"
   ],
   "author": "Yevhenii Kleshchev <dasx10@gmail.com>",
   "license": "MIT",
