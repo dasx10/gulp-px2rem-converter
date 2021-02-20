@@ -12,6 +12,7 @@ test('teturn html size',()=>{
 
 test('teturn html size empty root',()=>{
     expect(getParams(':root{}html{font-size:100%;}')).toBe("100%");
+    expect(getParams(':root{}html{font-size:16px;}')).toBe("16px");
     expect(getParams(':root{width:100px;}html{font-size:100%;}')).toBe("100%");
     expect(getParams(':root{width:100px;}html{font-size:20px;}')).toBe("20px");
 })

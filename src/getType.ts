@@ -1,7 +1,7 @@
 const px:RegExp = /px/i;
 const p:RegExp = /%/;
 
-let result:Array<any> = [];
+let result:Array <any> = [];
 
 let defaultType:string = 'px';
 
@@ -11,7 +11,7 @@ const getTypeFromParams = ( arg : string ) : string => {
         defaultType = result[0];
     } else {
         result = p.exec(arg) || [];
-        if(result){
+        if(result?.length){
             defaultType = result[0];
         }
     }

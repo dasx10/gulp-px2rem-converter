@@ -1,33 +1,39 @@
 const {getParams,getRoot} = require('../dist/findRoot');
 
+const fz = 'font-size:16px;'
+const root = ':root{}'
+const rootZ = `:root{${fz}}`
+const html = 'html{}'
+const htmlZ = `html{${fz}}`
+
 test('return root', () => {
-    getParams(':root{font-size:16px;}');
-    expect(getRoot(':root{font-size:16px;}')).toBe(":root{font-size:16px;}");
+    getParams(rootZ);
+    expect(getRoot(rootZ)).toBe(rootZ);
 });
 
 test('return root ecect html', () => {
-    getParams('html{font-size:20px;}:root{font-size:16px;}');
-    expect(getRoot('html{font-size:20px;}:root{font-size:16px;}')).toBe(":root{font-size:16px;}");
+    getParams(htmlZ+rootZ);
+    expect(getRoot(htmlZ+rootZ)).toBe(rootZ);
 });
 
 test('return root ecect emty html', () => {
-    getParams('html{}:root{font-size:16px;}');
-    expect(getRoot('html{}:root{font-size:16px;}')).toBe(":root{font-size:16px;}");
+    getParams(html+rootZ);
+    expect(getRoot(html+rootZ)).toBe(rootZ);
 });
 
 test('return html', () => {
-    getParams('html{font-size:20px;}');
-    expect(getRoot(':root{font-size:16px;}html{font-size:20px;}')).toBe("html{font-size:20px;}");
+    getParams(htmlZ);
+    expect(getRoot(htmlZ)).toBe(htmlZ);
 });
 
 test('return html empty root', () => {
-    getParams(':root{}html{font-size:20px;}');
-    expect(getRoot(':root{}html{font-size:20px;}')).toBe("html{font-size:20px;}");
+    getParams(root+htmlZ);
+    expect(getRoot(root+htmlZ)).toBe(htmlZ);
 });
 
 test('return empty all empty', () => {
-    getParams(':root{}html{}');
-    expect(getRoot(':root{}html{}')).toBe("");
+    getParams(root+html);
+    expect(getRoot(root+html)).toBe("");
 });
 
 test('return empty all fz empty', () => {

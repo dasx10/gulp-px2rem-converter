@@ -10,7 +10,7 @@ const getTypeFromParams = (arg) => {
     }
     else {
         result = p.exec(arg) || [];
-        if (result) {
+        if (result === null || result === void 0 ? void 0 : result.length) {
             defaultType = result[0];
         }
     }

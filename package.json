@@ -1,6 +1,6 @@
 {
   "name": "gulp-px2rem-converter",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "description": "Convert all px to rem",
   "main": "index.js",
   "scripts": {
