@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/dasx10/gulp-px-to-rem.svg?branch=master)](https://travis-ci.com/dasx10/gulp-px-to-rem)
 ----
 Convert all `px` to `rem`
-## install 
+## install
 
 ```
 npm i -D gulp-px2rem-converter
@@ -24,15 +24,15 @@ module.exports.css = css;
 
 If you are not using `:root` or `html` or they do not have a `font-size` then you can ignore it. The default value `16px` will be taken or you can specify this value manually
 ```
-pxToRem(16) 
+pxToRem(16)
 ```
 or
 ```
-pxToRem('16px') 
+pxToRem('16px')
 ```
 or
 ```
-pxToRem('100%') 
+pxToRem('100%')
 ```
 ## run
 ```
@@ -119,3 +119,8 @@ You can enter both `px` and `PX` or `Px`
 
 Doesn't work if you are using `:root` or `html`
 in `@media`
+
+
+## compatibility
+
+css less scss
