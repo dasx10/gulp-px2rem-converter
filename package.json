@@ -1,6 +1,6 @@
 {
   "name": "gulp-px2rem-converter",
-  "version": "1.5.2",
+  "version": "1.5.4",
   "description": "Convert all px to rem",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "px"
   ],
   "author": "Yevhenii Kleshchev <dasx10@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dasx10/gulp-px-to-rem/issues"
   },
