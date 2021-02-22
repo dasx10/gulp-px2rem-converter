@@ -1,5 +1,5 @@
 # gulp converter pixel to rem
-[![Build Status](https://travis-ci.com/dasx10/gulp-px-to-rem.svg?branch=master)](https://travis-ci.com/dasx10/gulp-px-to-rem)
+[![Build Status](https://travis-ci.com/dasx10/gulp-px2rem-converter.svg?branch=master)](https://travis-ci.com/dasx10/gulp-px2rem-converter)
 ----
 Convert all `px` to `rem`
 ## install

@@ -1,6 +1,6 @@
 {
   "name": "gulp-px2rem-converter",
-  "version": "1.5.6",
+  "version": "1.5.9",
   "description": "Gulp plugin. Converts all properties in pixels to rem, also converts all media in pixels in em",
   "main": "index.js",
   "scripts": {
