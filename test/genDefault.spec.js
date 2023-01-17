@@ -1,4 +1,4 @@
-const generic = require('../dist/generic');
+const replace = require('../dist/replace');
 
 const units = ['vw','vh','vmin','vmax','rem','em', '%'];
 const params = [
@@ -15,7 +15,7 @@ units.forEach(unit=>{
     params.forEach(param=>{
         test(`return default ${unit} in ${param}`, () => {
             const prop = getRandomInt(1920);
-            expect(generic(`${param}:${prop}${unit};`,16)).toBe(`${param}:${prop}${unit};`);
+            expect(replace(`${param}:${prop}${unit};`,16)).toBe(`${param}:${prop}${unit};`);
         })
     })
 });

@@ -1,6 +1,7 @@
 "use strict";
-const findRoot = require('./findRoot');
-const getType = require('./getType');
+const replace = require("./replace");
+const findRoot = require("./findRoot");
+const getType = require("./getType");
 let param;
 let type;
 let rootParam;
@@ -15,23 +16,20 @@ const pxToRem = (file, rootSize) => {
         type = getType(arg).toLocaleLowerCase();
         param = parseInt(arg.replace(type, '').trim());
         rootParam = findRoot.getRoot();
-        if (rootParam) {
+        if (rootParam)
             file = file.replace(rootParam, template);
-        }
     }
     switch (type) {
         case 'px':
-            file = require('./generic')(file, param);
-            if (rootParam) {
+            file = replace(file, param);
+            if (rootParam)
                 file = file.replace(template, rootParam);
-            }
             break;
         case '%':
             param = 16 * param / 100;
-            file = require('./generic')(file, param);
-            if (rootParam) {
+            file = replace(file, param);
+            if (rootParam)
                 file = file.replace(template, rootParam);
-            }
             break;
     }
     file = file.replace(/rem+[ \)|\)|\)\n]+{/ig, 'em){');

@@ -1,42 +1,41 @@
-const rootMode:RegExp = /:root+[^}]+}/; // find :root{@any}
-const htmlMode:RegExp = /html+[^}]+}/; // find html{@any}
-const fzMode:RegExp = /font-size+[^;]+;/ // find font-size:@any;
+const rootPattern:RegExp = /:root+[^}]+}/; // find :root{@any}
+const htmlPattern:RegExp = /html+[^}]+}/; // find html{@any}
+const fontSizePattern:RegExp = /font-size+[^;]+;/ // find font-size:@any;
 
 let resultRoot:Array<string> = [];
 let params:string = '16px';
 let fzResult:Array<string> = [];
-
 const getParams = (file:string, skipeRoot:boolean = false):string => {
-    if(!skipeRoot){
-        resultRoot = rootMode.exec(file) || [];
-        if (resultRoot.length) {
-            fzResult = fzMode.exec(resultRoot[0]) || [];
-            if(fzResult.length){
-                return params = fzResult[0].replace(';','').split(':')[1];
-            } else {
+	if(!skipeRoot){
+		resultRoot = rootPattern.exec(file) || [];
+		if (resultRoot.length) {
+			fzResult = fontSizePattern.exec(resultRoot[0]) || [];
+			if(fzResult.length){
+				return params = fzResult[0].replace(';','').split(':')[1];
+			} else {
 				resultRoot = [];
-                return getParams(file, true);
-            }
-        }
-    }
+				return getParams(file, true);
+			}
+		}
+	}
 
-    resultRoot = htmlMode.exec(file) || [];
-    if(resultRoot){
-        fzResult = fzMode.exec(resultRoot[0]) || [];
-        if(fzResult.length){
-            return params = fzResult[0].replace(';','').split(':')[1];
-        } else {
-            resultRoot = [];
-            return '16px';
-        }
-    }
+	resultRoot = htmlPattern.exec(file) || [];
+	if(resultRoot){
+		fzResult = fontSizePattern.exec(resultRoot[0]) || [];
+		if(fzResult.length){
+			return params = fzResult[0].replace(';','').split(':')[1];
+		} else {
+			resultRoot = [];
+			return '16px';
+		}
+	}
 
-    return params;
+	return params;
 }
 
-const getRoot = ():string => resultRoot[0] || '';
+const getRoot = () : string => resultRoot[0] || '';
 
 module.exports = {
-    getParams,
-    getRoot
-}
+	getParams,
+	getRoot
+};

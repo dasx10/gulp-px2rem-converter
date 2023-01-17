@@ -1,4 +1,4 @@
-const generic = require('../dist/generic');
+const replace = require('../dist/replace');
 const remToEm = /rem+[ \)|\)|\)\n]+{/ig;
 const em = 'em){';
 
@@ -12,22 +12,22 @@ for(let i = 20; i < 120; i+=10){
         coficients.forEach(cof=>{
             rems.forEach(rem=>{
                 test(`replace em into ${i}${rem} coficient ${cof} in ${mediaparam}`,()=>{
-                    expect(generic(`@media(${mediaparam}:${i}${rem}){}`, cof).replace(remToEm,em)).toBe(`@media(${mediaparam}:${i}em){}`);
+                    expect(replace(`@media(${mediaparam}:${i}${rem}){}`, cof).replace(remToEm,em)).toBe(`@media(${mediaparam}:${i}em){}`);
                 });
             });
 
             test(`return ${i}em is ${i}em coficient ${cof} in ${mediaparam}`,()=>{
-                expect(generic(`@media(${mediaparam}:${i}em){}`,cof).replace(remToEm,em)).toBe(`@media(${mediaparam}:${i}em){}`);
+                expect(replace(`@media(${mediaparam}:${i}em){}`,cof).replace(remToEm,em)).toBe(`@media(${mediaparam}:${i}em){}`);
             });
 
             test(`return ${i}em is ${i}em coficient ${cof} if many media in ${mediaparam}`,()=>{
                 const media = `@media(${mediaparam}:${i}em){}@media(min-width:${i*2}em){}@media(max-width:${i*3}em){}`;
-                expect(generic(media,cof).replace(remToEm,em)).toBe(media);
+                expect(replace(media,cof).replace(remToEm,em)).toBe(media);
             });
 
             units.forEach(unit=>{
                 test(`return default ${i}${unit} coficient ${cof} in ${mediaparam}`,()=>{
-                    expect(generic(`@media(${mediaparam}:${i}${unit}){}`,cof).replace(remToEm, em)).toBe(`@media(${mediaparam}:${i}${unit}){}`);
+                    expect(replace(`@media(${mediaparam}:${i}${unit}){}`,cof).replace(remToEm, em)).toBe(`@media(${mediaparam}:${i}${unit}){}`);
                 });
             });
         });
